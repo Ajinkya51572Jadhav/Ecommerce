@@ -35,25 +35,14 @@ const path = require("path");
 
 
 
-  //  app.use(express.static(path.join(__dirname, "../fronted/build")));
-  //  app.get("*", (req, res) => {
-  //    res.sendFile(path.resolve(__dirname, "../fronted/build/index.html"));
-  //    console.log(path.resolve(__dirname, "../fronted/build/index.html"))
-  //  });
+   // app.use(express.static(path.join(__dirname, "../fronted/build")));
+   // app.get("*", (req, res) => {
+   //   res.sendFile(path.resolve(__dirname, "../fronted/build/index.html"));
+   //   res.sendFile(path.resolve(__dirname, "../fronted/public/index.html"));
+   //   console.log(path.resolve(__dirname, "../fronted/public/index.html"))
+   // });
 
 
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-  app.get("*",(req,res)=>{
-      res.sendFile(
-          path.join(__dirname, "../frontend/build/index.html"),
-          function (err) {
-              if(err) {
-                  res.status(500).send(err)
-              }
-          }
-      )
-  });
 
 
 
