@@ -38,7 +38,7 @@ dotenv.config({path:"./config/config.env"});
  })
 
 
-const server =  app.listen(process.env.PORT || 4000,()=>{
+const server =  app.listen(process.env.PORT,()=>{
 console.log("localhost connected is",process.env.PORT);
 })
 
