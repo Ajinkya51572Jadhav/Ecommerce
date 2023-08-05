@@ -21,11 +21,12 @@ process.on("uncaughtException",(err)=>{
 
 // //     config 
 dotenv.config({path:"./config/config.env"});
+require("dotenv").config({ path: "backend/config/config.env" });
 
-// Config
-if (process.env.NODE_ENV !== "Production"){
-    require("dotenv").config({ path: "backend/config/config.env" });
-  }
+// // Config
+// if (process.env.NODE_ENV !== "Production"){
+//     require("dotenv").config({ path: "backend/config/config.env" });
+//   }
 
 
 //  connecting to database 
