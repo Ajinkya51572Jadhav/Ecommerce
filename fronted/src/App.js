@@ -26,18 +26,18 @@
    import ForgotPassword  from "./component/User/ForgotPassword.js";
    import ResetPassword from "./component/User/ResetPassword";
    import Cart from "./component/Cart/Cart.js"
-   import Shipping from "./component/Cart/Shipping.js"
-   import ConfirmOrder from "./component/Cart/ConfirmOrder.js"
-   import Payment from "./component/Cart/Payment.js"
-   import OrderSuccess from "./component/Cart/OrderSuccess.js"
-   import MyOrders  from "./component/Order/MyOrders.js" 
-   import OrderDetails from "./component/Order/OrderDetails.js"
-   import Dashboard from "./component/admin/Dashboard.js";
+  //  import Shipping from "./component/Cart/Shipping.js"
+  //  import ConfirmOrder from "./component/Cart/ConfirmOrder.js"
+  //  import Payment from "./component/Cart/Payment.js"
+  //  import OrderSuccess from "./component/Cart/OrderSuccess.js"
+  //  import MyOrders  from "./component/Order/MyOrders.js" 
+  //  import OrderDetails from "./component/Order/OrderDetails.js"
+  //  import OrderList from "./component/admin/OrderList";
+  //  import ProcessOrder from "./component/admin/ProcessOrder.js"
+  import Dashboard from "./component/admin/Dashboard.js";
    import ProductList from "./component/admin/ProductList.js"
    import NewProduct from "./component/admin/NewProduct";
    import UpdateProduct from "./component/admin/UpdateProduct.js"
-   import OrderList from "./component/admin/OrderList";
-   import ProcessOrder from "./component/admin/ProcessOrder.js"
    import UserList from "./component/admin/UserList";
    import UserUpdate from "./component/admin/UserUpdate.js";
    import ProductReview from "./component/admin/ProductReview.js"
@@ -50,22 +50,22 @@
      
      const {isAuthenticated ,user}=useSelector((state)=>state.user);
         
-     const [stripeApikey,setStripeApikey]=useState("");
+    //  const [stripeApikey,setStripeApikey]=useState("");
      
-     async function getStripeApiKey(){
-              const {data} = await axios.get("/api/v1/stripeapikey");
+    //  async function getStripeApiKey(){
+    //           const {data} = await axios.get("https://backend-ajinkya51572jadhav.vercel.app/api/v1/stripeapikey");
              
-              console.log("data-----  striapikey",data);
+    //           console.log("data-----  striapikey",data);
              
-                  setStripeApikey(data.stripeApiKey);
-     } 
+    //               setStripeApikey(data.stripeApiKey);
+    //  }                                 
 
-      console.log("stripeApiKey",stripeApikey);
+      // console.log("stripeApiKey",stripeApikey);
           
      useEffect(()=>{
    
          store.dispatch(()=>loadUser());             
-         getStripeApiKey();
+        //  getStripeApiKey();
      },[]);                                          
 
     //  window.addEventListener("contextmenu",(e)=>e.preventDefault())
@@ -92,11 +92,11 @@
 <Route  path="/cart" element={<Cart/>}/>
 <Route  path={"*"}  element={<NotFound/>}/>
      
-{
+{/*
   stripeApikey && (
         <Route path="/process/payment" element={<Elements  stripe={loadStripe(stripeApikey)}><Payment/></Elements>}/>
   )
-}
+  */}
 
 {/*    Protect Route   outlet    */}
 
@@ -106,16 +106,13 @@
 <Route path="/account" element={<Profile/>}/>
 <Route path="/me/update" element={<UpdateProfile/>}/>
 <Route path="password/update" element={<UpdatePassword/>}/>
-<Route path="/shipping" element={<Shipping/>}/>
-<Route path="/order/confirm" element={<ConfirmOrder/>}/>       
-
-
-
-
-<Route path="/success" element={<OrderSuccess/>}/>
+{/*<Route path="/shipping" element={<Shipping/>}/>       
+<Route path="/order/confirm" element={<ConfirmOrder/>}/>      
+<Route path="/success" element={<OrderSuccess/>}/> 
 <Route path="orders" element={<MyOrders/>}/>
  <Route path="/order/:id"  element={<OrderDetails/>} />
- 
+ */}
+
  {/*    admin  Route   chilidern   */}
 
 <Route  path="/admin/dashboard" element={<ProtectedRoute isAuthenticat={isAuthenticated}  isAdmin={true}>
@@ -138,16 +135,16 @@
 </ProtectedRoute>}/>
 
 
-<Route  path="/admin/orders" element={<ProtectedRoute isAuthenticat={isAuthenticated}  isAdmin={true}>
+{/*<Route  path="/admin/orders" element={<ProtectedRoute isAuthenticat={isAuthenticated}  isAdmin={true}>
 <OrderList/>
 </ProtectedRoute>}/>
- 
+
 
 
 <Route  path="/admin/order/:id" element={<ProtectedRoute isAuthenticat={isAuthenticated}  isAdmin={true}>
 <ProcessOrder/>
 </ProtectedRoute>}/>
- 
+*/} 
 
 <Route  path="/admin/users" element={<ProtectedRoute isAuthenticat={isAuthenticated}  isAdmin={true}>
 <UserList/>
@@ -176,7 +173,7 @@
 </Routes>
     <Footer/>
     </BrowserRouter>
-
+ 
     </Fragment>
   );
 }

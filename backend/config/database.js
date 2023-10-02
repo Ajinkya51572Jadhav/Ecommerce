@@ -12,3 +12,31 @@ console.log("database conntected !",data.connection.host);
          }
 
          module.exports = connectDatabase;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         

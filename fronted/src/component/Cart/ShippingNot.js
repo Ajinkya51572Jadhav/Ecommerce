@@ -13,7 +13,7 @@ import { useAlert } from "react-alert";
 
 import "./Shipping.css";
 import { saveShippingInfo } from "../../actions/cartAction";
-import CheckoutSteps from "../Cart/CheckoutSteps"
+import CheckoutSteps from "./CheckoutStepsNot"
 import { useNavigate } from "react-router-dom";
 
 

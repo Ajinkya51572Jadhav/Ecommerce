@@ -12,7 +12,7 @@ import { Doughnut, Line  } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
 import { useAlert } from 'react-alert';
 import { cleareErrors, getAdminProducts } from '../../actions/ProductAction';
-import { getAllOrders } from '../../actions/orderAction';
+// import { getAllOrders } from '../../actions/orderAction';
 import { alluser } from '../../actions/userAction';
 ChartJS.register(  ...registerables ,CategoryScale,  LinearScale,  PointElement,  LineElement,  Title,  Tooltip,  Legend);
 
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
 
        const {error ,products} = useSelector((state)=>state.products);
-       const {orders}=useSelector((state)=>state.allOrders)
+      //  const {orders}=useSelector((state)=>state.allOrders)
        const {users} = useSelector((state)=>state.allusers);
         
        let outOfStock = 0;
@@ -45,18 +45,20 @@ const Dashboard = () => {
                }
                    
           dispatch(getAdminProducts());          
-          dispatch(getAllOrders()); 
+          // dispatch(getAllOrders()); 
           dispatch(alluser());
         },[dispatch,error,alert]);
 
         //   totol amount 
-        let totalAmount = 0;
-        orders &&
+        let totalAmount = 1;
+      
+      {/*  orders &&
           orders.forEach((item) => {
             totalAmount += item.totalPrice;
           });
+        */}
 
-   const data = {
+ {/*  const data = {
     labels: ["Initial Amount", "Amount Earned"],
     datasets: [
       {
@@ -78,7 +80,7 @@ const Dashboard = () => {
       },
     ],
   };
-
+*/}
 
 
   return (
@@ -91,17 +93,17 @@ const Dashboard = () => {
                  <div><p>Total Amount <br/>₹ {totalAmount}</p></div>
                    <div className='dashboardSummaryBox2'>
                      <NavLink to={'/admin/products'}><p>Product</p><p>{products && products.length}</p></NavLink>
-                     <NavLink to={'/admin/orders'}><p>Orders</p><p>{orders && orders.length}</p></NavLink>
+                    {/* <NavLink to={'/admin/orders'}><p>Orders</p><p>{orders && orders.length}</p></NavLink> */}
                      <NavLink to={'/admin/users'}><p>Users</p><p>{users && users.length}</p></NavLink>
                    </div>
               </div>
 
   <div className='lineChart'>
-  <Line  data={data} />  
+  {/*<Line  data={data} />*/}  
   </div>
 
   <div className="doughnutChart">
-  <Doughnut data={doughnutState} />
+  {/*<Doughnut data={doughnutState} />*/}
 </div>
      </div>
     </div>

@@ -71,7 +71,7 @@ const Payment = () => {
             }
           };
 
-            const {data} = await axios.post("/api/v1/payment/process",paymentData,config); 
+            const {data} = await axios.post("https://backend-ajinkya51572jadhav.vercel.app/api/v1/payment/process",paymentData,config); 
             console.log("payment data",data);
 
                 const client_secret = data.client_secret ;

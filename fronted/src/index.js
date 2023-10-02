@@ -15,7 +15,7 @@ const options ={
    position:positions.TOP_CENTER,
    transition:transitions.SCALE     //FADE
         }
-
+ 
 
         
       root.render(

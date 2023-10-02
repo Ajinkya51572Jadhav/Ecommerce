@@ -9,23 +9,23 @@ import {composeWithDevTools} from "redux-devtools-extension";
 import { ProductDetailsReducer, productsReducer, productReducer, newProductReducer, newReviewReducer, productReviewsReducer, reviewdeleteReducer } from "./reducers/ProductReducer";
 import { forgotPasswordReducer, getAlluserReducer, getUserDetailsReducer, profileReducer, userReducer } from "./reducers/userReducer"; 
 import { cartReducer } from "./reducers/cartReducer";
-import { AllOrdersReducers, myOrdersReducer, newOrderReducer ,orderDetailsReducer, orderReducer } from "./reducers/orderReducer";
+// import { AllOrdersReducers, myOrdersReducer, newOrderReducer ,orderDetailsReducer, orderReducer } from "./reducers/orderReducer";
 
 const reducer = combineReducers({
 products : productsReducer,
-productDetails:ProductDetailsReducer ,
+productDetails:ProductDetailsReducer,
 user:userReducer,
 profile:profileReducer,
 forgotPassword : forgotPasswordReducer,  
 cart: cartReducer,
-newOrder : newOrderReducer,
-myOrders : myOrdersReducer, 
-ordersDetails : orderDetailsReducer ,
+// newOrder : newOrderReducer,
+// myOrders : myOrdersReducer, 
+// ordersDetails : orderDetailsReducer ,
 NewReview : newReviewReducer ,
 newProduct:newProductReducer,
 product:productReducer,
-allOrders : AllOrdersReducers,
-order : orderReducer,
+// allOrders : AllOrdersReducers,
+// order : orderReducer,
 allusers : getAlluserReducer,
 userDetails : getUserDetailsReducer,
 productReviews : productReviewsReducer,
@@ -34,10 +34,10 @@ review: reviewdeleteReducer
 }) 
 
 let initialState ={
-      cart :{
-     cartItems : localStorage.getItem("cartItems") ?  JSON.parse(localStorage.getItem("cartItems")) : [] ,
-shippingInfo :  localStorage.getItem("shippingInfo") ?  JSON.parse(localStorage.getItem("shippingInfo")) : {},
-      } 
+//       cart :{
+//      cartItems : localStorage.getItem("cartItems") ?  JSON.parse(localStorage.getItem("cartItems")) : [] ,
+// shippingInfo :  localStorage.getItem("shippingInfo") ?  JSON.parse(localStorage.getItem("shippingInfo")) : {},
+//       } 
 
 };
 

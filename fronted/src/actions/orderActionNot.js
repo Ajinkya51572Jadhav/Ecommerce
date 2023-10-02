@@ -26,7 +26,7 @@
           UPDATE_ORDER_REQUEST,
           UPDATE_ORDER_SUCCESS,
 
-   }from ".././constants/orderConstants";
+   }from "../constants/orderConstantsNot";
     import axios from "axios";
 
   //           create Order
@@ -44,7 +44,7 @@
                 "Content-Type":"application/json"
            }
         }
-             const {data} = await axios.post("/api/v1/order/new",order, config);
+             const {data} = await axios.post("https://backend-ajinkya51572jadhav.vercel.app/api/v1/order/new",order, config);
 
         console.log("orderAction data",data);
 
@@ -74,7 +74,7 @@
                 type:MY_ORDERS_REQUEST,
               });
 
-             const {data} = await axios.get("/api/v1/orders/me");
+             const {data} = await axios.get("https://backend-ajinkya51572jadhav.vercel.app/api/v1/orders/me");
 
                  console.log("myorders",data);
 
@@ -104,7 +104,7 @@
                     type:ORDERS_DETAILS_REQUEST
                 });
     
-                const {data} = await axios.get(`/api/v1/order/${id}`);
+                const {data} = await axios.get(`https://backend-ajinkya51572jadhav.vercel.app/api/v1/order/${id}`);
                      console.log("OrderDetails",data);
 
                 dispatch({
@@ -130,7 +130,7 @@
                     type:ALL_ORDERS_REQUEST,
                   });
                         
-                  const {data} = await axios.get(`/api/v1/admin/orders`);
+                  const {data} = await axios.get(`https://backend-ajinkya51572jadhav.vercel.app/api/v1/admin/orders`);
                         console.log("all orders", data);
                     
                      dispatch({
@@ -161,7 +161,7 @@
                                 }
                               };
 
-                              const {data} = await axios.put(`/api/v1/admin/order/${id}`,order,config);
+                              const {data} = await axios.put(`https://backend-ajinkya51572jadhav.vercel.app/api/v1/admin/order/${id}`,order,config);
 
                           dispatch({
                             type:UPDATE_ORDER_SUCCESS,
@@ -195,7 +195,7 @@
                           type:DELETE_ORDER_REQUEST,
                         });
                                     
-                        const {data}  = await axios.delete(`/api/v1/admin/order/${id}`);
+                        const {data}  = await axios.delete(`https://backend-ajinkya51572jadhav.vercel.app/api/v1/admin/order/${id}`);
                              
                         dispatch({
                             type:DELETE_ORDER_SUCCESS,

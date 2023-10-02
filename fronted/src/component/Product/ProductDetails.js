@@ -8,9 +8,9 @@ import { useAlert } from 'react-alert';
 
 import "./ProductDetails.css";
 import { cleareErrors, getProductDetails, newReview } from '../../actions/ProductAction';
-import ReviewCard from "./ReviewCard"
+import ReviewCard from "./ReviewCardNot"
 import Loader from '../layout/Loader/Loader';
-import { addItemsToCart } from '../../actions/cartAction';
+// import { addItemsToCart } from '../../actions/cartAction';
 import {Dialog , DialogActions , DialogContent ,  DialogTitle , Button}  from "@material-ui/core";
 import {Rating} from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from '../../constants/ProductConstants';
@@ -72,7 +72,7 @@ import { NEW_REVIEW_RESET } from '../../constants/ProductConstants';
         }
 
     function addToCartHandler(){
-           dispatch(addItemsToCart(params.id,quantity));
+          //  dispatch(addItemsToCart(params.id,quantity));
            alert.success("Item Added To Cart");
     }
 

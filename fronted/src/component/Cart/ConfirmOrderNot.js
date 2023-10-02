@@ -6,7 +6,7 @@ import {useSelector } from 'react-redux';
 
 
 import  "./ConfirmOrder.css";
-import CheckoutSteps from './CheckoutSteps';
+import CheckoutSteps from './CheckoutStepsNot';
 import { Typography } from '@material-ui/core';
 import { NavLink, useNavigate } from 'react-router-dom';
 

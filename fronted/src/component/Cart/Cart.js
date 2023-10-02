@@ -3,18 +3,18 @@
 import React, { Fragment } from 'react';
 import {useDispatch,useSelector} from "react-redux";
 import {Typography} from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+// import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 
 import "./Cart.css";
 import CartItemCard from "./CartItemCard.js"
-import { addItemsToCart , removeItemsFromCart } from '../../actions/cartAction'; 
+// import { addItemsToCart , removeItemsFromCart } from '../../actions/cartAction'; 
 import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
   
    const navigate = useNavigate(); 
-   const dispatch = useDispatch();
+  //  const dispatch = useDispatch();
 
       const {cartItems}=useSelector((state)=>state.cart);
          console.log(cartItems);
@@ -24,7 +24,7 @@ const Cart = () => {
                  if(stock <=quantity){
                     return ;
                  }
-                   dispatch(addItemsToCart(id,newQty));
+                  //  dispatch(addItemsToCart(id,newQty));
              };
 
             
@@ -33,11 +33,11 @@ const Cart = () => {
                  if(quantity <= 1 ){
                    return ;
                  }
-                  dispatch(addItemsToCart(id,newQty));
+                  // dispatch(addItemsToCart(id,newQty));
              }
 
             const deleteCartItem=(productId)=>{
-               dispatch(removeItemsFromCart(productId));
+              //  dispatch(removeItemsFromCart(productId));
             }
 
        
@@ -57,7 +57,7 @@ const Cart = () => {
   {
     cartItems.length ===0?(
           <div className='emptyCart'>
-             <RemoveShoppingCartIcon/>
+          {/* <RemoveShoppingCartIcon/>*/}
              <Typography> NO Product In Your Cart  </Typography>
              <NavLink to={"/products"}>View Products</NavLink>
           </div>
@@ -74,7 +74,7 @@ const Cart = () => {
      {
        cartItems && cartItems.map((item)=>(
          <div className='cartContainer'>
-        <CartItemCard item={item} deleteCartItem={deleteCartItem}/>
+        <CartItemCard item={item} deleteCartItem={"deleteCartItem"}/>
               <div className='cartInput'>
                    <button onClick={()=>decreaseQuantity(item.product,item.quantity)}>-</button>
                       <span className='quantity'>{item.quantity}</span>

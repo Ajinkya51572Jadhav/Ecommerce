@@ -8,7 +8,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 
  import Sidebar from "./Sidebar";
  import { clearErrors, deletOrder, getAllOrders} from "../../actions/orderAction"; 
-import { DELETE_ORDER_RESET } from '../../constants/orderConstants';
+import { DELETE_ORDER_RESET } from '../../constants/orderConstantsNot';
 import { Button } from '@material-ui/core';
 
 const OrderList = () => {

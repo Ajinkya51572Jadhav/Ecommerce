@@ -1,5 +1,5 @@
 
-import { ALL_ORDERS_FAIL } from "../constants/orderConstants";
+import { ALL_ORDERS_FAIL } from "../constants/orderConstantsNot";
 import { LOGIN_REQUEST ,
          LOGIN_SUCCESS ,
          LOGIN_FAIL ,
@@ -118,7 +118,7 @@ export const register =(userData)=>async(dispatch)=>{
                 dispatch({
                     type:LOAD_USER_REQUEST
                   });
-           const {data} = await axios.get(`api/v1/me`);
+           const {data} = await axios.get(`/api/v1/me`);
            console.log("me load user",data);
            
            dispatch({
@@ -141,7 +141,7 @@ export const register =(userData)=>async(dispatch)=>{
 export const  logout=()=>async (dispatch)=>{
     try {                 
     
-      await axios.get(`api/v1/logout`);
+      await axios.get(`/api/v1/logout`);
    
    dispatch({
     type:LOGOUT_SUCCESS,
