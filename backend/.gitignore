@@ -2,5 +2,13 @@
 # dependencies
 /node_modules
 
+<<<<<<< HEAD
 ../backend/config/config.env 
 .vercel
+=======
+./config/config.env
+../backend/config/config.env
+config.env
+/config/config.env
+../../backend/config/config.env
+>>>>>>> 425fda6496cfc3985bfa94879e8ec2ef9b2f1a48
